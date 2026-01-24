@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Roasters</title>
+</head>
+<body>
+    <h1>My Coffee Roasters</h1>
+
+    {%if roasters %}
+        <ul>
+            {% for roaster in roasters%}
+                <li>
+                    <strong> {{roaster.name}} </strong>
+                    {% if roaster.location %} - {{roaster.location}}{% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p> No Roasters yet. <a href="/admin/coffee_tracker/roaster/add/">Add one! </a></p>
+    {% endif %}
+</body>
+</html>
