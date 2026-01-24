@@ -9,6 +9,7 @@ Currently Implemented:
 - Roaster List view from models
 
 What's next:
+- fix location for roasters - city, state, country
 - Create other list views
 - Create other detail views
 - Create 'Create' Views and forms
