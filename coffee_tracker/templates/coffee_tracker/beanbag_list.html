@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Coffee Beans</title>
+    </head>
+    <body>
+        <h1> My Coffee </h1>
+
+        {% if bean_bags %}
+            <ul>
+                {% for bag in bean_bags %}
+                <li>
+                    <strong> {{ bag.name }}</strong> by {{ bag.roaster.name }}
+                    {% if bag.origin %} - {{ bag.origin }} {% endif %}
+                    {% if bag.roast_level %} - ({{ bag.roast_level }}) {% endif %}
+                    {% if bag.tasting_notes %} 
+                        <br><em> Notes: {{ bag.tasting_notes}} </em>
+                    {% endif %}
+                </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p> No beans yet. <a href="/admin/coffee_tracker/beanbag/add/"> Add one! </a></p>
+        {% endif %}
+    </body>
+</html>
