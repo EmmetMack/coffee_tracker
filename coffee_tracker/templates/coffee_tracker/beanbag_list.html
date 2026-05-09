@@ -10,7 +10,7 @@
             <ul>
                 {% for bag in bean_bags %}
                 <li>
-                    <strong> {{ bag.name }}</strong> by {{ bag.roaster.name }}
+                    <a href="/beans/{{ bag.pk }}/"><strong>{{ bag.name }}</strong></a> by {{ bag.roaster.name }}
                     {% if bag.origin %} - {{ bag.origin }} {% endif %}
                     {% if bag.roast_level %} - ({{ bag.roast_level }}) {% endif %}
                     {% if bag.tasting_notes %} 

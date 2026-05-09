@@ -10,7 +10,7 @@
         <ul>
             {% for recipe in recipes %}
                 <li>
-                    <strong>{{ recipe.name }}</strong> ({{ recipe.brew_method.name }})
+                    <a href="/recipes/{{ recipe.pk }}/"><strong>{{ recipe.name }}</strong></a> ({{ recipe.brew_method.name }})
                     — {{ recipe.coffee_dose }}g coffee / {{ recipe.water_dose }}ml water
                     {% if recipe.temp %} — {{ recipe.temp }}°{{ recipe.temp_unit }}{% endif %}
                     {% if recipe.grind_size_description %} — Grind: {{ recipe.grind_size_description }}{% endif %}

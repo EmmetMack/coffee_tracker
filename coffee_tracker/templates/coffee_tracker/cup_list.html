@@ -10,7 +10,7 @@
         <ul>
             {% for cup in cups %}
                 <li>
-                    <strong>{{ cup.brew_date|date:"Y-m-d H:i" }}</strong>
+                    <a href="/cups/{{ cup.pk }}/"><strong>{{ cup.brew_date|date:"Y-m-d H:i" }}</strong></a>
                     {% if cup.bean_bag %} — {{ cup.bean_bag.name }}{% endif %}
                     {% if cup.recipe %} — {{ cup.recipe.name }}{% endif %}
                     {% if cup.rating %} — {{ cup.rating }}/10{% endif %}

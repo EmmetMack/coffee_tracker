@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cup — {{ cup.brew_date|date:"Y-m-d H:i" }}</title>
+</head>
+<body>
+    <h1>Cup — {{ cup.brew_date|date:"Y-m-d H:i" }}</h1>
+    <ul>
+        <li><strong>Bean Bag:</strong> {{ cup.bean_bag.name|default:"—" }}</li>
+        <li><strong>Recipe:</strong> {{ cup.recipe.name|default:"—" }}</li>
+        <li><strong>Rating:</strong> {% if cup.rating %}{{ cup.rating }}/10{% else %}—{% endif %}</li>
+        <li><strong>Actual Coffee Dose:</strong> {% if cup.actual_coffee_dose %}{{ cup.actual_coffee_dose }}g{% else %}—{% endif %}</li>
+        <li><strong>Actual Water Dose:</strong> {% if cup.actual_water_dose %}{{ cup.actual_water_dose }}ml{% else %}—{% endif %}</li>
+        <li><strong>Water Temperature:</strong> {% if cup.water_temp %}{{ cup.water_temp }}°{{ cup.temp_unit }}{% else %}—{% endif %}</li>
+        <li><strong>Grind Size (numeric):</strong> {{ cup.grind_size_numeric|default:"—" }}</li>
+        <li><strong>Grinder:</strong> {{ cup.grinder_name|default:"—" }}</li>
+        <li><strong>Recipe Variations:</strong> {{ cup.recipe_variations|default:"—" }}</li>
+        <li><strong>Tasting Notes:</strong> {{ cup.tasting_notes|default:"—" }}</li>
+        <li><strong>Added:</strong> {{ cup.created_at|date:"Y-m-d" }}</li>
+    </ul>
+    <a href="/cups/">← Back to Cups</a>
+</body>
+</html>

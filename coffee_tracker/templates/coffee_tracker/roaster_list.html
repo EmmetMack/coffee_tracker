@@ -10,8 +10,8 @@
         <ul>
             {% for roaster in roasters%}
                 <li>
-                    <strong> {{roaster.name}} </strong>
-                    {% if roaster.location %} - {{roaster.location}}{% endif %}
+                    <a href="/roasters/{{ roaster.pk }}/"><strong>{{ roaster.name }}</strong></a>
+                    {% if roaster.location %} - {{ roaster.location }}{% endif %}
                 </li>
             {% endfor %}
         </ul>

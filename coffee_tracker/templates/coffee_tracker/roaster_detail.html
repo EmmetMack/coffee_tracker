@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ roaster.name }}</title>
+</head>
+<body>
+    <h1>{{ roaster.name }}</h1>
+    <ul>
+        <li><strong>Location:</strong> {{ roaster.location|default:"—" }}</li>
+        <li><strong>Website:</strong> {% if roaster.website %}<a href="{{ roaster.website }}">{{ roaster.website }}</a>{% else %}—{% endif %}</li>
+        <li><strong>Notes:</strong> {{ roaster.notes|default:"—" }}</li>
+        <li><strong>Added:</strong> {{ roaster.created_at|date:"Y-m-d" }}</li>
+    </ul>
+    <a href="/roasters/">← Back to Roasters</a>
+</body>
+</html>

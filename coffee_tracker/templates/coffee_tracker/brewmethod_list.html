@@ -10,7 +10,7 @@
         <ul>
             {% for method in brew_methods %}
                 <li>
-                    <strong>{{ method.name }}</strong>
+                    <a href="/brew-methods/{{ method.pk }}/"><strong>{{ method.name }}</strong></a>
                     {% if method.description %} — {{ method.description }}{% endif %}
                 </li>
             {% endfor %}

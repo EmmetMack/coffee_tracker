@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ bean_bag.name }}</title>
+</head>
+<body>
+    <h1>{{ bean_bag.name }}</h1>
+    <ul>
+        <li><strong>Roaster:</strong> {{ bean_bag.roaster.name }}</li>
+        <li><strong>Origin:</strong> {{ bean_bag.origin|default:"—" }}</li>
+        <li><strong>Roast Date:</strong> {{ bean_bag.roast_date|default:"—" }}</li>
+        <li><strong>Roast Level:</strong> {{ bean_bag.roast_level|default:"—" }}</li>
+        <li><strong>Tasting Notes:</strong> {{ bean_bag.tasting_notes|default:"—" }}</li>
+        <li><strong>Comments:</strong> {{ bean_bag.comments|default:"—" }}</li>
+        <li><strong>Added:</strong> {{ bean_bag.created_at|date:"Y-m-d" }}</li>
+    </ul>
+    <a href="/beans/">← Back to Beans</a>
+</body>
+</html>

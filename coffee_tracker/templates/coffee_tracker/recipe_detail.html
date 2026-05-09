@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ recipe.name }}</title>
+</head>
+<body>
+    <h1>{{ recipe.name }}</h1>
+    <ul>
+        <li><strong>Brew Method:</strong> {{ recipe.brew_method.name }}</li>
+        <li><strong>Coffee Dose:</strong> {{ recipe.coffee_dose }}g</li>
+        <li><strong>Water Dose:</strong> {{ recipe.water_dose }}ml</li>
+        <li><strong>Temperature:</strong> {% if recipe.temp %}{{ recipe.temp }}°{{ recipe.temp_unit }}{% else %}—{% endif %}</li>
+        <li><strong>Grind Size:</strong> {{ recipe.grind_size_description|default:"—" }}</li>
+        <li><strong>Grind Size (numeric):</strong> {{ recipe.grind_size_numeric|default:"—" }}</li>
+        <li><strong>Instructions:</strong> {{ recipe.instructions|default:"—" }}</li>
+        <li><strong>Added:</strong> {{ recipe.created_at|date:"Y-m-d" }}</li>
+    </ul>
+    <a href="/recipes/">← Back to Recipes</a>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ brew_method.name }}</title>
+</head>
+<body>
+    <h1>{{ brew_method.name }}</h1>
+    <ul>
+        <li><strong>Description:</strong> {{ brew_method.description|default:"—" }}</li>
+        <li><strong>Added:</strong> {{ brew_method.created_at|date:"Y-m-d" }}</li>
+    </ul>
+    <a href="/brew-methods/">← Back to Brew Methods</a>
+</body>
+</html>
