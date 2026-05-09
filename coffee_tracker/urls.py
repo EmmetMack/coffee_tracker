@@ -1,7 +1,8 @@
 from django.urls import path
-from .views import RoasterListView, BeanBagListView, BrewMethodListView, RecipeListView, CupListView
+from .views import HomeView, RoasterListView, BeanBagListView, BrewMethodListView, RecipeListView, CupListView
 
 urlpatterns = [
+    path('', HomeView.as_view(), name='home'),
     path('roasters/', RoasterListView.as_view(), name='roaster-list'),
     path('beans/', BeanBagListView.as_view(), name='beanbag-list'),
     path('brew-methods/', BrewMethodListView.as_view(), name='brewmethod-list'),

@@ -1,5 +1,9 @@
-from django.views.generic import ListView
+from django.views.generic import ListView, TemplateView
 from .models import Roaster, BeanBag, BrewMethod, Recipe, Cup
+
+
+class HomeView(TemplateView):
+    template_name = 'coffee_tracker/home.html'
 
 
 class RoasterListView(ListView):
