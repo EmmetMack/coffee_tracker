@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cups</title>
+</head>
+<body>
+    <h1>My Cups</h1>
+
+    {% if cups %}
+        <ul>
+            {% for cup in cups %}
+                <li>
+                    <strong>{{ cup.brew_date|date:"Y-m-d H:i" }}</strong>
+                    {% if cup.bean_bag %} — {{ cup.bean_bag.name }}{% endif %}
+                    {% if cup.recipe %} — {{ cup.recipe.name }}{% endif %}
+                    {% if cup.rating %} — {{ cup.rating }}/10{% endif %}
+                    {% if cup.tasting_notes %}
+                        <br><em>{{ cup.tasting_notes }}</em>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No cups logged yet. <a href="/admin/coffee_tracker/cup/add/">Add one!</a></p>
+    {% endif %}
+</body>
+</html>

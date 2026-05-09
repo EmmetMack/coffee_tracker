@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Brew Methods</title>
+</head>
+<body>
+    <h1>Brew Methods</h1>
+
+    {% if brew_methods %}
+        <ul>
+            {% for method in brew_methods %}
+                <li>
+                    <strong>{{ method.name }}</strong>
+                    {% if method.description %} — {{ method.description }}{% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No brew methods yet. <a href="/admin/coffee_tracker/brewmethod/add/">Add one!</a></p>
+    {% endif %}
+</body>
+</html>

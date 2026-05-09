@@ -1,7 +1,6 @@
-from django.shortcuts import render
 from django.views.generic import ListView
-from .models import Roaster, BeanBag
-# Create your views here.
+from .models import Roaster, BeanBag, BrewMethod, Recipe, Cup
+
 
 class RoasterListView(ListView):
     model = Roaster
@@ -10,6 +9,21 @@ class RoasterListView(ListView):
 
 class BeanBagListView(ListView):
     model = BeanBag
-    template_name = 'coffee_tracker/bean_bag_list.html'
+    template_name = 'coffee_tracker/beanbag_list.html'
     context_object_name = 'bean_bags'
+
+class BrewMethodListView(ListView):
+    model = BrewMethod
+    template_name = 'coffee_tracker/brewmethod_list.html'
+    context_object_name = 'brew_methods'
+
+class RecipeListView(ListView):
+    model = Recipe
+    template_name = 'coffee_tracker/recipe_list.html'
+    context_object_name = 'recipes'
+
+class CupListView(ListView):
+    model = Cup
+    template_name = 'coffee_tracker/cup_list.html'
+    context_object_name = 'cups'
 
